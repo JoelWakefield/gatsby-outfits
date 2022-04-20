@@ -12,6 +12,7 @@ module.exports = {
     PARALLEL_QUERY_RUNNING: true
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-contentful`,

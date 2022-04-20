@@ -1,9 +1,9 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-
+import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
-import { Product } from '../components/product'
 
+import { Product } from '../components/product'
 import { Accordion } from '../components/accordion'
 import { rhythm } from "../utils/typography"
 import Layout from "../layouts"
@@ -16,26 +16,33 @@ class IndexPage extends React.Component {
   render() {
     const pants = this.props.data.pants.nodes
     const shirts = this.props.data.shirts.nodes
+
     return (
-      <Layout>
-        <div style={{ 
-          marginBottom: rhythm(2),
-          boxSizing: 'border-box',
-          margin: '0',
-          padding: '0'
-        }}>
-          <Accordion title="Pants">
-          {pants.map((node) => 
-              <Product key={node.id} node={node} type="pants" />
-          )}
-          </Accordion>
-          <Accordion title="Shirts">
-            {shirts.map((node) => (
-              <Product key={node.id} node={node} type="shirts" />
-            ))}
-          </Accordion>
-        </div>
-      </Layout>
+      <>
+        <Helmet htmlAttributes={{ lang: 'en' }}>
+          <title>Outfits</title>
+        </Helmet>
+
+        <Layout>
+          <div style={{ 
+            marginBottom: rhythm(2),
+            boxSizing: 'border-box',
+            margin: '0',
+            padding: '0'
+          }}>
+            <Accordion title="Pants">
+            {pants.map((node) => 
+                <Product key={node.id} node={node} type="pants" />
+                )}
+            </Accordion>
+            <Accordion title="Shirts">
+              {shirts.map((node) => (
+                <Product key={node.id} node={node} type="shirts" />
+                ))}
+            </Accordion>
+          </div>
+        </Layout>
+      </>
     )
   }
 }

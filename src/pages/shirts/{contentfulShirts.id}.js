@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { Helmet } from "react-helmet"
 
 import Layout from "../../layouts/index"
 import { rhythm } from "../../utils/typography"
@@ -11,40 +12,46 @@ const ShirtPage = ({ data }) => {
   const image = getImage(data.contentfulShirts.image)
 
   return (
-    <Layout>
-      <h1 style={{ marginBottom: rhythm(1 / 2) }}>{title}</h1>
-      <br style={{ marginTop: rhythm(1) }} />
+    <>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
+        <title>Outfits</title>
+      </Helmet>
+      
+      <Layout>
+        <h1 style={{ marginBottom: rhythm(1 / 2) }}>{title}</h1>
+        <br style={{ marginTop: rhythm(1) }} />
 
-      <div className='image-wrapper'>
-        {image && (
-          <GatsbyImage
+        <div className='image-wrapper'>
+          {image && (
+            <GatsbyImage
             style={{ marginBottom: rhythm(1) }}
             alt={title}
             image={image}
-          />
-        )}
-      </div>
-      <br style={{ marginTop: rhythm(1) }} />
+            />
+            )}
+        </div>
+        <br style={{ marginTop: rhythm(1) }} />
 
-      <h3>Tags</h3>
-      <ul>
-        {tags && tags.map((tag, i) => (
-          <li key={i}>
-            {tag}
-          </li>
-        ))}
-      </ul>
-      <br style={{ marginTop: rhythm(1) }} />
+        <h3>Tags</h3>
+        <ul>
+          {tags && tags.map((tag, i) => (
+            <li key={i}>
+              {tag}
+            </li>
+          ))}
+        </ul>
+        <br style={{ marginTop: rhythm(1) }} />
 
-      <h3>Outfits</h3>
-      <ul>
-        {outfits && outfits.map((outfit, i) => (
-          <li key={i}>
-            {outfit.title}
-          </li>
-        ))}
-      </ul>
-    </Layout>
+        <h3>Outfits</h3>
+        <ul>
+          {outfits && outfits.map((outfit, i) => (
+            <li key={i}>
+              {outfit.title}
+            </li>
+          ))}
+        </ul>
+      </Layout>
+    </>
   )
 }
 

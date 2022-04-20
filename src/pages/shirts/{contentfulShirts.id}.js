@@ -16,7 +16,7 @@ const ShirtPage = ({ data }) => {
       <Helmet htmlAttributes={{ lang: 'en' }}>
         <title>Outfits</title>
       </Helmet>
-      
+
       <Layout>
         <h1 style={{ marginBottom: rhythm(1 / 2) }}>{title}</h1>
         <br style={{ marginTop: rhythm(1) }} />
@@ -32,7 +32,7 @@ const ShirtPage = ({ data }) => {
         </div>
         <br style={{ marginTop: rhythm(1) }} />
 
-        <h3>Tags</h3>
+        <h2>Tags</h2>
         <ul>
           {tags && tags.map((tag, i) => (
             <li key={i}>
@@ -42,7 +42,7 @@ const ShirtPage = ({ data }) => {
         </ul>
         <br style={{ marginTop: rhythm(1) }} />
 
-        <h3>Outfits</h3>
+        <h2>Outfits</h2>
         <ul>
           {outfits && outfits.map((outfit, i) => (
             <li key={i}>

@@ -1,0 +1,28 @@
+:root {
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+h1,h2,h3,h4 {
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 767px)  {
+  html {
+    font-size: 16;
+  }
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccd;
+  padding: 0.3rem 0 0.7rem 0;
+}
+
+.product-title {
+  font-size: 32px;
+  line-height: 2;
+  font-weight: 800;
+  color: #ccd;
+}

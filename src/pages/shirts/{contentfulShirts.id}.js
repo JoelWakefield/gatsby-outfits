@@ -1,14 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from "../../layouts/index"
 import { rhythm } from "../../utils/typography"
 import '../productPage.css'
 
 const ShirtPage = ({ data }) => {
-  const { title, tags, image, outfit: outfits } = data.contentfulShirts
-
+  const { title, tags, outfit: outfits } = data.contentfulShirts
+  const image = getImage(data.contentfulShirts.image)
 
   return (
     <Layout>
@@ -19,7 +19,8 @@ const ShirtPage = ({ data }) => {
         {image && (
           <GatsbyImage
             style={{ marginBottom: rhythm(1) }}
-            image={image.gatsbyImageData}
+            alt={title}
+            image={image}
           />
         )}
       </div>
@@ -27,7 +28,7 @@ const ShirtPage = ({ data }) => {
 
       <h3>Tags</h3>
       <ul>
-        {tags.map((tag, i) => (
+        {tags && tags.map((tag, i) => (
           <li key={i}>
             {tag}
           </li>
@@ -37,7 +38,7 @@ const ShirtPage = ({ data }) => {
 
       <h3>Outfits</h3>
       <ul>
-        {outfits.map((outfit, i) => (
+        {outfits && outfits.map((outfit, i) => (
           <li key={i}>
             {outfit.title}
           </li>

@@ -8,6 +8,9 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby with Contentful`,
   },
+  flags: {
+    PARALLEL_QUERY_RUNNING: true
+  },
   plugins: [
     `gatsby-plugin-image`,
     {

@@ -24,8 +24,8 @@ const Contact = ({data}) => {
           <textarea name="message" id="message" rows="5" />
         </label>
         <div className='bottom-buttons'>
-          <button type='submit'>Send</button>
           <input type='reset' value='Clear' />
+          <button type='submit'>Send</button>
         </div>
       </form>
     </Layout>

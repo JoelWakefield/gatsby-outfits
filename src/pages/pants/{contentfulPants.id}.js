@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { Helmet } from 'react-helmet'
+import { CustomHelmet as Helmet } from '../../components/helmet'
 
 import Layout from "../../layouts/index"
 import { rhythm } from "../../utils/typography"
@@ -13,9 +13,7 @@ const PantsPage = ({ data }) => {
 
   return (
     <>
-      <Helmet htmlAttributes={{ lang: 'en'}}>
-        <title>Outfits</title>
-      </Helmet>
+      <Helmet />
 
       <Layout>
         <h1 style={{ marginBottom: rhythm(1 / 2) }}>{title}</h1>

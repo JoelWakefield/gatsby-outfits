@@ -1,6 +1,6 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
+import { CustomHelmet as Helmet } from '../components/helmet'
 import { graphql } from "gatsby"
 
 import { Product } from '../components/product'
@@ -19,9 +19,7 @@ class IndexPage extends React.Component {
 
     return (
       <>
-        <Helmet htmlAttributes={{ lang: 'en' }}>
-          <title>Outfits</title>
-        </Helmet>
+        <Helmet />
 
         <Layout>
           <div style={{ 

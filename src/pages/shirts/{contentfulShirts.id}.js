@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from "../../layouts/index"
@@ -40,7 +40,12 @@ const ShirtPage = ({ data }) => {
         <ul>
           {outfits && outfits.map((outfit, i) => (
             <li key={i}>
-              {outfit.title}
+              <Link 
+                style={{ color: `inherit`, textDecoration: `none` }}
+                to={`/outfits/${outfit.slug}`}
+              >
+                {outfit.title}
+              </Link>
             </li>
           ))}
         </ul>
@@ -56,8 +61,8 @@ export const pageQuery = graphql`
       title
       tags
       outfit {
+        slug
         title
-        id
       }
       id
       image {

@@ -60,11 +60,6 @@ export const pageQuery = graphql`
             width: 200
           )
         }
-        outfit {
-          id
-          title
-          slug
-        }
       }
     }
     pants: allContentfulPants {
@@ -74,12 +69,11 @@ export const pageQuery = graphql`
         tags
         gatsbyPath(filePath: "/pants/{contentfulPants.id}")
         image {
-          gatsbyImageData(layout: CONSTRAINED, width: 200)
-        }
-        outfit {
-          id
-          slug
-          title
+          gatsbyImageData(
+            layout: CONSTRAINED,
+            placeholder: BLURRED, 
+            width: 200
+          )
         }
       }
     }

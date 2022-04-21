@@ -29,3 +29,10 @@ li {
   display: flex;
   justify-content: center;
 }
+
+.dual-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

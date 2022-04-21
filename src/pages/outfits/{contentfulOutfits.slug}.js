@@ -57,25 +57,25 @@ export const pageQuery = graphql`
         title
         gatsbyPath(filePath: "/shirts/{contentfulShirts.id}")
         image {
-          gatsbyImageData(
-            layout: CONSTRAINED,
-            placeholder: BLURRED, 
-            width: 200
-          )
+          ...imageFields
         }
       }
       count {
         title
         gatsbyPath(filePath: "/pants/{contentfulPants.id}")
         image {
-          gatsbyImageData(
-            layout: CONSTRAINED,
-            placeholder: BLURRED, 
-            width: 200
-          )
+          ...imageFields
         }
       }
     }
+  }
+
+  fragment imageFields on ContentfulAsset {
+    gatsbyImageData(
+      layout: CONSTRAINED,
+      placeholder: BLURRED, 
+      width: 280
+    )
   }
 `
 

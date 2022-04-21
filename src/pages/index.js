@@ -24,15 +24,15 @@ class IndexPage extends React.Component {
             margin: '0',
             padding: '0'
           }}>
-            <Accordion title="Pants">
-            {pants.map((node) => 
-                <Product key={node.id} node={node} type="pants" />
-                )}
-            </Accordion>
             <Accordion title="Shirts">
-              {shirts.map((node) => (
+              {shirts.map((node) =>
                 <Product key={node.id} node={node} type="shirts" />
-                ))}
+              )}
+            </Accordion>
+            <Accordion title="Pants">
+              {pants.map((node) => 
+                <Product key={node.id} node={node} type="pants" />
+              )}
             </Accordion>
           </div>
         </Layout>

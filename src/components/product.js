@@ -3,7 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from 'gatsby'
 
 import { rhythm } from '../utils/typography'
-import './product.css'
+import './product.sass'
 
 export const Product = ({ node, type }) => {
   return (

@@ -12,6 +12,7 @@
     "gatsby-plugin-gatsby-cloud": "^4.12.1",
     "gatsby-plugin-image": "next",
     "gatsby-plugin-react-helmet": "^5.12.1",
+    "gatsby-plugin-sass": "^5.12.1",
     "gatsby-plugin-sharp": "^4.13.0-next.0",
     "gatsby-plugin-typography": "next",
     "gatsby-source-contentful": "^7.10.1",

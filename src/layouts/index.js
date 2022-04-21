@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import * as PropTypes from "prop-types"
 
 import { rhythm } from "../utils/typography"
+import {CustomHelmet as Helmet} from '../components/helmet'  
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -17,11 +18,26 @@ const DefaultLayout = ({ children }) => (
         padding: rhythm(1 / 2),
       }}
     >
-      <Link style={{ textDecoration: `none` }} to="/">
-        <h4 style={{ color: `#dde`, marginBottom: 0 }}>
-          Store
-        </h4>
-      </Link>
+      <Helmet />
+
+      <div style={{ 
+        display: 'flex', 
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap: '4rem'
+      }}>
+        <Link style={{ textDecoration: `none` }} to="/">
+          <h4 style={{ color: `#dde`, marginBottom: 0 }}>
+            Store
+          </h4>
+        </Link>
+
+        <Link style={{ textDecoration: `none` }} to="/contact">
+          <h4 style={{ color: `#dde`, marginBottom: 0 }}>
+            Contact Us
+          </h4>
+        </Link>
+      </div>
     </header>
     <div
       style={{

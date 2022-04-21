@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { CustomHelmet as Helmet } from '../../components/helmet'
 
 import Layout from "../../layouts/index"
 import { rhythm } from "../../utils/typography"
@@ -12,9 +11,6 @@ const PantsPage = ({ data }) => {
   const image = getImage(data.contentfulPants.image)
 
   return (
-    <>
-      <Helmet />
-
       <Layout>
         <h1 style={{ marginBottom: rhythm(1 / 2) }}>{title}</h1>
         <br style={{ marginTop: rhythm(1) }} />
@@ -50,7 +46,6 @@ const PantsPage = ({ data }) => {
           </ul>
         <br style={{ marginTop: rhythm(1) }} />
       </Layout>
-    </>
   )
 }
 

@@ -1,6 +1,5 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-import { CustomHelmet as Helmet } from '../components/helmet'
 import { graphql } from "gatsby"
 
 import { Product } from '../components/product'
@@ -18,9 +17,6 @@ class IndexPage extends React.Component {
     const shirts = this.props.data.shirts.nodes
 
     return (
-      <>
-        <Helmet />
-
         <Layout>
           <div style={{ 
             marginBottom: rhythm(2),
@@ -40,7 +36,6 @@ class IndexPage extends React.Component {
             </Accordion>
           </div>
         </Layout>
-      </>
     )
   }
 }

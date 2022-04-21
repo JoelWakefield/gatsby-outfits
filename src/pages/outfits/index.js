@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const OutfitsPage = () => {
+const OutfitsPage = () => {
   return (
     <div>OutfitsPage</div>
   )
 }
+
+export default OutfitsPage
